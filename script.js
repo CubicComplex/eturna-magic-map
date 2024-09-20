@@ -11,6 +11,9 @@ const sourceColors = {
   "Cause Célèbre": "#e87a12ff"
 };
 
+// Define source node IDs
+const sourceNodeIds = new Set(Object.keys(sourceColors));
+
 // Data: Nodes and Links
 const nodes = [
   { id: "Belfagensis", color: sourceColors["Belfagensis"], url: "https://google.com/" },
