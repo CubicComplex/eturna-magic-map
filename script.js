@@ -231,10 +231,18 @@ node.append('text')
 // Update the simulation on each tick
 simulation.on('tick', () => {
   link
+  
       .attr('x1', d => d.source.x)
       .attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y)
+      .attr('stroke', d => {
+        const sourceNode = nodeById.get(d.source.id || d.source);
+        return sourceNode.color || '#fff';
+      })
+
       .attr('y2', d => d.target.y);
+      
 
   node
       .attr('transform', d => `translate(${d.x},${d.y})`);
