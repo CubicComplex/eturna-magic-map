@@ -22,6 +22,8 @@
 
     .links line {
       stroke-opacity: 0.8;
+      stroke-width: 3px;
+      marker-end: url(#arrowhead); /* Reference to the arrowhead marker */
     }
 
     text {
@@ -41,7 +43,14 @@
 </head>
 <body>
   <!-- SVG container for the graph -->
-  <svg></svg>
+  <svg>
+    <defs>
+      <!-- Define the arrowhead marker -->
+      <marker id="arrowhead" viewBox="0 -5 10 10" refX="22" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M0,-5L10,0L0,5" fill="#fff"></path> <!-- White arrowhead -->
+      </marker>
+    </defs>
+  </svg>
 
   <!-- Include D3.js from CDN -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
